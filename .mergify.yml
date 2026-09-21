@@ -1,0 +1,8 @@
+pull_request_rules:
+  - name: auto merge on green ci
+    conditions:
+      - base=main
+      - check-success=h3-ci
+    actions:
+      merge:
+        method: merge
