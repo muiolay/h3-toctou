@@ -1,0 +1,15 @@
+name: h3-ci
+on:
+  pull_request:
+  push:
+jobs:
+  h3-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: run
+        run: |
+          echo "H3-CI-START $(date -u +%FT%T.%NZ) sha=$GITHUB_SHA event=$GITHUB_EVENT_NAME ref=$GITHUB_REF"
+          ls -la
+          sleep 45
+          echo "H3-CI-DONE $(date -u +%FT%T.%NZ)"
